@@ -26,4 +26,25 @@ MinIO is the best object store for Iceberg - regardless of what you choose for a
    - Java
    - Hadoop
    - Spark
+   - Pyspark: `pip install pyspark==3.5.1
+
+   ADD https://repo.maven.apache.org/maven2/org/apache/iceberg/iceberg-spark-runtime-3.3_2.12/1.1.0/iceberg-spark-runtime-3.3_2.12-1.1.0.jar $SPARK_HOME/jars
+
+   
+   ADD https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.4/hadoop-aws-3.3.4.jar $SPARK_HOME/jars
+
+   
+   ADD https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-common/3.3.4/hadoop-common-3.3.4.jar $SPARK_HOME/jars
+
+   
+   ADD https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.172/aws-java-sdk-bundle-1.12.172.jar $SPARK_HOME/jars
+
+   
+   ADD https://repo1.maven.org/maven2/software/amazon/awssdk/bundle/2.17.257/bundle-2.17.257.jar $SPARK_HOME/jars
+
+   
+   ADD https://repo1.maven.org/maven2/software/amazon/awssdk/url-connection-client/2.17.257/url-connection-client-2.17.257.jar $SPARK_HOME/jars
+
+   
+   ADD https://mvnrepository.com/artifact/org.apache.spark/spark-hadoop-cloud_2.12/3.3.4
 
