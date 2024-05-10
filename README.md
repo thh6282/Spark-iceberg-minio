@@ -23,28 +23,35 @@ MinIO is the best object store for Iceberg - regardless of what you choose for a
 # Install Iceberg with hadoop catalog and minio
 
 ## Requirement
-   - Java
-   - Hadoop
-   - Spark
-   - Pyspark: `pip install pyspark==3.5.1
+   ### Java: 
+   - set up: https://www.java.com/en/
+   - add to variable environment JAVA_HOME:
+       JAVA_HOME = /java/jdk-22
+   ### Hadoop: 
+   - https://github.com/cdarlint/winutils/blob/master/hadoop-3.3.5/bin/winutils.exe
+   - add to variable environment HADOOP_HOME: `HADOOP_HOME = /hadoop`
+     
+   ### Spark:
+   - https://spark.apache.org/downloads.html
+   - add to variable environment SPARK_HOME: `SPARK_HOME = /spark`
+   - Download jar files and add to folder /spark/jars/
 
-   ADD https://repo.maven.apache.org/maven2/org/apache/iceberg/iceberg-spark-runtime-3.3_2.12/1.1.0/iceberg-spark-runtime-3.3_2.12-1.1.0.jar $SPARK_HOME/jars
+     https://repo.maven.apache.org/maven2/org/apache/iceberg/iceberg-spark-runtime-3.3_2.12/1.1.0/iceberg-spark-runtime-3.3_2.12-1.1.0.jar
 
-   
-   ADD https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.4/hadoop-aws-3.3.4.jar $SPARK_HOME/jars
+     https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.4/hadoop-aws-3.3.4.jar
 
-   
-   ADD https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-common/3.3.4/hadoop-common-3.3.4.jar $SPARK_HOME/jars
+     https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-common/3.3.4/hadoop-common-3.3.4.jar
 
-   
-   ADD https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.172/aws-java-sdk-bundle-1.12.172.jar $SPARK_HOME/jars
+     https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.172/aws-java-sdk-bundle-1.12.172.jar
 
-   
-   ADD https://repo1.maven.org/maven2/software/amazon/awssdk/bundle/2.17.257/bundle-2.17.257.jar $SPARK_HOME/jars
+     https://repo1.maven.org/maven2/software/amazon/awssdk/bundle/2.17.257/bundle-2.17.257.jar
 
-   
-   ADD https://repo1.maven.org/maven2/software/amazon/awssdk/url-connection-client/2.17.257/url-connection-client-2.17.257.jar $SPARK_HOME/jars
+     https://repo1.maven.org/maven2/software/amazon/awssdk/url-connection-client/2.17.257/url-connection-client-2.17.257.jar
 
-   
-   ADD https://mvnrepository.com/artifact/org.apache.spark/spark-hadoop-cloud_2.12/3.3.4
+     https://mvnrepository.com/artifact/org.apache.spark/spark-hadoop-cloud_2.12/3.3.4
+   - Add to system variable: `$SPARK_HOME/jars`  
+   ### Pyspark: 
+      pip install pyspark==3.5.1
+   ### 
+
 
