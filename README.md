@@ -25,11 +25,11 @@ MinIO is the best object store for Iceberg - regardless of what you choose for a
 ## Requirement
    ### Java: 
    - set up: https://www.java.com/en/
-   - add to variable environment JAVA_HOME:
-       JAVA_HOME = /java/jdk-22
+   - add to user variable environment JAVA_HOME: `JAVA_HOME = /java/jdk-22`
    ### Hadoop: 
    - https://github.com/cdarlint/winutils/blob/master/hadoop-3.3.5/bin/winutils.exe
-   - add to variable environment HADOOP_HOME: `HADOOP_HOME = /hadoop`
+   - Add to user variable environment HADOOP_HOME: `HADOOP_HOME = /hadoop/bin`
+   - Add to system variable: `$HADOOP_HOME/bin`
      
    ### Spark:
    - https://spark.apache.org/downloads.html
@@ -52,7 +52,13 @@ MinIO is the best object store for Iceberg - regardless of what you choose for a
    - Add to system variable: `$SPARK_HOME/jars`  
    ### Pyspark: 
       pip install pyspark==3.5.1
-## Document:
+## Use pyspark read/write data iceberg format to minio  
+```
+   logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+   logger = logging.getLogger("MinIOSparkJob")
+```
+
+# Document:
    For more information: https://iceberg.apache.org/docs/nightly/
 
 
