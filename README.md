@@ -57,6 +57,28 @@ MinIO is the best object store for Iceberg - regardless of what you choose for a
    logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
    logger = logging.getLogger("MinIOSparkJob")
 ```
+Create a spark session
+```
+   spark = SparkSession.builder.appName("Read from MinIO").getOrCreate()
+```
+Config spark iceberg with hadoop catalog:
+```
+   conf = (
+    SparkConf()
+    .set("spark.sql.extensions","org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions")
+    .set("spark.sql.catalog.demo", "org.apache.iceberg.spark.SparkCatalog")
+    .set("spark.sql.catalog.demo.io-impl", "org.apache.iceberg.aws.s3.S3FileIO")
+    .set("spark.sql.catalog.demo.warehouse", "s3a://warehouse/") # Location of the Iceberg tables
+    .set("spark.sql.catalog.demo.s3.endpoint", "http://127.0.0.1:54793")
+    .set("spark.sql.defaultCatalog", "demo") # Name of the Iceberg catalog
+    .set("spark.sql.catalogImplementation", "in-memory")
+    .set("spark.sql.catalog.demo.type", "hadoop") # Iceberg catalog type
+)
+```
+Apply config spark session
+```
+   spark = SparkSession.builder.config(conf=conf).getOrCreate()
+```
 
 # Document:
    For more information: https://iceberg.apache.org/docs/nightly/
