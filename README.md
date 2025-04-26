@@ -80,7 +80,7 @@ Apply config spark session
    spark = SparkSession.builder.config(conf=conf).getOrCreate()
 ```
 
-# Document:
+# Documentation
    For more information: https://iceberg.apache.org/docs/nightly/
 
 
